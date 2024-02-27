@@ -4,53 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyek1 STr HTML 27 02 2024</title>
+    <title>Proyek 1 : NobbyDK</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Srisakdi&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <header>
-
-        <nav>
+    <nav>  
+        <div class = "wrapper"></div>
             <div class="logo">
-                <h4>Rizqi Proyek 1</h4>
+                <h4>.NOBBY<span>DK.</span></h4>
             </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Subjects</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Assignment</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <input type="checkbox">
-                <span></span>
-                <span></span>
-                <span></span>   
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profil diri</a></li>
+                    <li><a href="#">video</a></li>
+                    <li><a href="#">kontak</a></li>
+                </ul>
             </div>
         </nav>
-    </header>
-    <div class="container">
-    <main>
-        <div class="box flextwo">
-            <article>
-                <h2>Tentang Web</h2>
-                <p>Web Ini dibuat untuk memenuhi tugas Proyek 1. Beberapa sumber yang dipakai dalam pengerjaan tugas ini selain dari lms  adalah dari ... Terima Kasih</p>
-            </article>
+        <div class="wrapper">
+            <section id="Home">
+                <img src = "https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg?t=st=1709040430~exp=1709044030~hmac=065a5dc0fc5956f5a97e79839fd01975f57eb26ec7b1c41cc38af0ee1168876f&w=740">
+                <div class="kolom">
+                    <p class="deskripsi">Selamat Datang disitus NobbyDK</p>
+                    <h2>Mahasiswa Teknik Informatika</h2>
+                    <p>Belajar bersama menuju mahasiswa cerdas dan tak tertinggal</p>
+                    <p><a href="""class = "biru"">Selengkapnya</a></p>
+                </div>
+            </section>
+            <section id="Profil diri">
+                <div class = "container">
+                    <h6> Profil Diri </h6>
+                    <img src = "img/NOBBY.jpeg" class="image"/>
+                    <q>Nama : Nobby Dharma Khaulid</q>
+                    <q>Moto Hidup : Fokus pada tujuan, bukan hambatan </q>
+                    <q>Hobi : Mendengarkan musik</q>
+                    <q>Kemampuan Teknis : Mampu Bekerja sama Tim, Komunikasi</q>
+                    <q>Harapan Setelah lulus : Bisa mengimplementasikan ilmu yang telah diserap diperkuliahan ke dunia kerja dan tentunya menjadi orang yang lebih sukses</q>
+                    <table boder="1">
+                        <tr>
+                            <td>Nama</td>
+                            <td>NIM</td>
+                            <td>Kelas</td>
+                            <td>Prodi</td>
+                        </tr>
+                        <tr>
+                            <td>Nobby Dharma Khaulid</td>
+                            <td>231524020</td>
+                            <td>1A - TIF4</td>
+                            <td>D4 - Teknik Informatika</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section id = "video">
+                <div class = "container">
+                <video controls>
+                    <iframe width="560" height="315" src="https://youtu.be/QIpWKTHKcqM?si=K1e989lBsP6xldu8" frameborder="0" allowfullscreen></iframe>
+                    <q> Lesson learn : Banyak sekali yang saya pelajari mulai, karena sebelumnya saya tidak pernah membuat program HTML sama sekali</q>
+                </div>
+            </section>
+            <section id="kontak">
+                <div class = "container">
+                <h1>Alamat Kami</h1>
+                <hr>
+                <iframe src=”https://maps.app.goo.gl/QX1hMmshbtqzyFzXA″ width=”600″ height=”450″ frameborder=”0″ style=”border:0″ allowfullscreen></iframe>
+                <q> Whatsaap : 0000000000</q>
+                <q> Instagram : @nobbykhaulid</q>
+                </div>
+            </section>
         </div>
-        <aside class="box flexone">
-            <img src="img/RIZQI.png" class="image"/>
-            <h5>Muhammad Rizqi Sholahuddin</h5>
-        </aside>
-    </main>
-    <footer class="box">
-        Rizqi, Di depan Laptop 27 Februari 2024
-    </footer>
-    </div>
-</div>
-    <script src="js/main.js"></script>
-</body>
-
+    </body>
 </html>
