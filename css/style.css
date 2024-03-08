@@ -1,48 +1,109 @@
-* {
-  text-decoration: none;
-  margin: 0px;
-  padding: 0px;
-} 
+*,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Roboto", sans-serif;
-  overflow-x: hidden;
+  background-color: #FFFFFF;
 }
 
-.menu {
-  float: right;
-  justify-content: space-between;
-  width: 70%;
-}
-
-
-
-/*navbar*/
 nav {
-  display: flex;
   background-color: #12372A;
-  justify-content: space-around;
-  /* padding: 20px 0; atas bawah 20  kiri kanan 0 */
-  /* atur padding dengan flex */
-  height: 60px;
-  align-items: center;
-  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
 }
+
 nav ul {
   display: flex;
-  list-style-type: none;
-  width: 40%;
-  justify-content: space-between;
-  transition: all 0.4s;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
 }
 
-nav .logo {
-  font-family: 'Courier New', Courier, monospace, cursive;
-  letter-spacing: 4px; /*space antar char*/
-  color: #FFFFFF;
-  font-size: 45px;
+nav div img {
+  width: 50px;
 }
+
+nav ul li a {
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: all;
+  transition-duration: 300ms;
+  border-bottom: 1px solid rgba(255, 68, 0, 0);
+}
+
+nav ul li a:hover {
+  color: orangered;
+  border-bottom: 1px solid orangered;
+}
+
+.menu-icon {
+  /* background-color: tomato; */
+  font-size: 28px;
+  display: none;
+}
+
+main {
+  padding-top: 7rem;
+}
+.menu-toggle {
+  display: none; /* Tombol hamburger akan disembunyikan secara default */
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+      display: flex; /* Tombol hamburger akan muncul saat layar diperkecil */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      cursor: pointer;
+  }
+
+  .menu-toggle span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px;
+      transition: all 0.3s ease;
+  }
+
+  /* Animasi untuk hamburger */
+  .menu-toggle.active span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  nav ul {
+      display: none; /* Menyembunyikan daftar menu saat layar diperkecil */
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav ul.show {
+      display: flex; /* Menampilkan daftar menu saat tombol hamburger diklik */
+  }
+
+  nav ul li {
+      padding: 1rem 0;
+  }
+}
+
 .logo span {
   font-family:'Arial Narrow Bold', sans-serif;
   letter-spacing: 3px;
@@ -50,24 +111,9 @@ nav .logo {
   font-size: 30px;
 }
 
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 0.9rem;
-  padding : 0px;
-}
-
-
-nav ul li a:hover {
-  color: teal;
-  text-decoration: underline;
-}
-
-section {
-  margin:auto;
-  display: flex;
-  margin-bottom: 50px;
+header{
+  top: 0;
+  width: 100%;
 }
 
 .kolom {
@@ -80,6 +126,29 @@ section {
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
   color: #436850;
+}
+
+#Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+footer {
+  background-color: #12372A;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
 }
 
 h2 {
@@ -209,3 +278,40 @@ table, th, td {
   padding: 8px; /* Memberi padding pada sel */
 }
 
+section {
+  border: 2px solid #ADBC9F; /* Tambahkan border ke setiap section */
+  margin: auto;
+  display: flex;
+  margin-bottom: 50px;
+  padding: 20px; /* Tambahkan padding untuk memberikan jarak antara konten dan border */
+  box-sizing: border-box; /* Pastikan padding tidak memengaruhi lebar section */
+}
+
+section#sosmed > iframe {
+  border: none;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+header {
+    position: relative;
+}
+
+.welcome-text {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    font-size: 13px;
+    width: 100%;
+    color: #12372A;
+    text-align: center;
+    padding: 10px 0;
+    animation: moveText 20s linear infinite; /* Ubah durasi animasi sesuai kebutuhan */
+}

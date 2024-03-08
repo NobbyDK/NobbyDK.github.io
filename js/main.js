@@ -1,6 +1,13 @@
- const mntoggle = document.querySelector('.menu-toggle input');
- const nav = document.querySelector('nav ul');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
 
-mntoggle.addEventListener('click',function(){
-    nav.classList.toggle('menushow');
-})
+    menuToggle.addEventListener('click', function() {
+        // Toggle class 'active' pada tombol hamburger
+        menuToggle.classList.toggle('active');
+
+        // Toggle class 'show' pada daftar menu
+        navUl.classList.toggle('show');
+    });
+});
+
