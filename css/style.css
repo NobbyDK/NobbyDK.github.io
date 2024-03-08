@@ -9,6 +9,121 @@ body {
   background-color: #FFFFFF;
 }
 
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to left, #f46b45, #eea849);
+  color: #FFF;
+  height: 50px;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 768px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #12372A;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
 nav {
   background-color: #12372A;
   display: flex;
@@ -18,13 +133,13 @@ nav {
 
 nav ul {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-nav div img {
-  width: 50px;
+nav ul li {
+  padding: 0 1rem;
 }
 
 nav ul li a {
@@ -38,80 +153,38 @@ nav ul li a {
   border-bottom: 1px solid rgba(255, 68, 0, 0);
 }
 
-nav ul li a:hover {
-  color: orangered;
-  border-bottom: 1px solid orangered;
-}
-
-.menu-icon {
-  /* background-color: tomato; */
-  font-size: 28px;
-  display: none;
-}
-
-main {
-  padding-top: 7rem;
-}
-.menu-toggle {
-  display: none; /* Tombol hamburger akan disembunyikan secara default */
-}
-
 @media screen and (max-width: 768px) {
-  .menu-toggle {
-      display: flex; /* Tombol hamburger akan muncul saat layar diperkecil */
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      cursor: pointer;
-  }
-
-  .menu-toggle span {
-      display: block;
-      width: 30px;
-      height: 3px;
-      background-color: #fff;
-      margin: 5px;
-      transition: all 0.3s ease;
-  }
-
-  /* Animasi untuk hamburger */
-  .menu-toggle.active span:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-  }
-
-  .menu-toggle.active span:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-  }
-
   nav ul {
-      display: none; /* Menyembunyikan daftar menu saat layar diperkecil */
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
   }
 
   nav ul.show {
-      display: flex; /* Menampilkan daftar menu saat tombol hamburger diklik */
+    display: flex;
   }
 
   nav ul li {
-      padding: 1rem 0;
+    padding: 1rem 0;
+  }
+
+  .top-nav {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    padding: 0.5em;
   }
 }
 
 .logo span {
-  font-family:'Arial Narrow Bold', sans-serif;
+  font-family: 'Arial Narrow Bold', sans-serif;
   letter-spacing: 3px;
   color: #436850;
   font-size: 30px;
 }
 
-header{
+header {
   top: 0;
   width: 100%;
 }
@@ -134,7 +207,6 @@ header{
   align-items: center;
   text-align: center;
 }
-
 
 footer {
   background-color: #12372A;
@@ -161,8 +233,8 @@ h2 {
 }
 
 a.biru {
-  background : #436850;
-  border-radius: 30x;
+  background: #436850;
+  border-radius: 30px;
   margin-top: 30px;
   padding: 15px 20px 15px 20px;
   color: #FFFFFF;
@@ -170,33 +242,35 @@ a.biru {
   font-weight: bold;
 }
 
-
-
-  .image {
-   
-    width: 300px;
-    height: 300px;  
-    border-radius: 50%; /* Membuat foto menjadi bulat */
-    margin-bottom: 10px; /* Memberi jarak ke bawah antara foto dan teks */
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
 
 .container {
-    display: flex;
-    flex-direction: column;
-
-    border: 2px solid #ADBC9F;
-    padding: 8px;
-    border-radius: 5px;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+}
+
 main {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .box {
@@ -205,28 +279,30 @@ main {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Menengahkan elemen secara horizontal */
-  text-align: center; /* Menengahkan teks */
+  align-items: center;
+  text-align: center;
 }
-/* supaya ada jarak antar box  */
-.flexone{
-flex-grow: 1;
-}
-.flextwo{
-    flex-grow: 2;
-    }
-footer {
-    text-align: center;
-}
-h1 {
-  
-    text-align: center;
-    color: #12372A;
-    font-family: Arial, Helvetica, sans-serif;
-    text-justify: inter-word;
-    word-wrap: break-word;
 
+.flexone {
+  flex-grow: 1;
 }
+
+.flextwo {
+  flex-grow: 2;
+}
+
+footer {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #12372A;
+  font-family: Arial, Helvetica, sans-serif;
+  text-justify: inter-word;
+  word-wrap: break-word;
+}
+
 h5 {
   text-align: center;
   color: red;
@@ -235,22 +311,22 @@ h5 {
 
 h3 {
   display: flex;
-  justify-content: center; /* Menengahkan konten secara horizontal */
-  align-items: center; /* Menengahkan konten secara vertikal */
+  justify-content: center;
+  align-items: center;
 }
 
 p {
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
-  margin: 10px 0px 10px 0px;
-  padding: 10px 0px 10px 0px;
+  margin: 10px 0px;
+  padding: 10px 0px;
 }
 
 q {
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
-  margin: 5px 0px 5px 0px;
-  padding: 5px 0px 5px 0px;
+  margin: 5px 0px;
+  padding: 5px 0px;
   text-align: center;
 }
 
@@ -269,22 +345,24 @@ h4 {
 }
 
 table {
-  width: 100%; /* Agar tabel mengisi lebar container */
-  border-collapse: collapse; /* Menghilangkan celah antara sel-sel */
+  width: 100%;
+  border-collapse: collapse;
 }
 
-table, th, td {
-  border: 1px solid black; /* Menambahkan garis pada tabel */
-  padding: 8px; /* Memberi padding pada sel */
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
 }
 
 section {
-  border: 2px solid #ADBC9F; /* Tambahkan border ke setiap section */
+  border: 2px solid #ADBC9F;
   margin: auto;
   display: flex;
   margin-bottom: 50px;
-  padding: 20px; /* Tambahkan padding untuk memberikan jarak antara konten dan border */
-  box-sizing: border-box; /* Pastikan padding tidak memengaruhi lebar section */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 section#sosmed > iframe {
@@ -292,26 +370,34 @@ section#sosmed > iframe {
 }
 
 @keyframes moveText {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 header {
-    position: relative;
+  position: relative;
 }
 
 .welcome-text {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    font-size: 13px;
-    width: 100%;
-    color: #12372A;
-    text-align: center;
-    padding: 10px 0;
-    animation: moveText 20s linear infinite; /* Ubah durasi animasi sesuai kebutuhan */
+  position: relative;
+  bottom: 0;
+  left: 0;
+  font-size: 13px;
+  width: 100%;
+  color: #12372A;
+  text-align: center;
+  padding: 10px 0;
+  animation: moveText 20s linear infinite;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  .welcome-text {
+    font-size: 14px;
+    padding: 3px 0;
+  }
 }
