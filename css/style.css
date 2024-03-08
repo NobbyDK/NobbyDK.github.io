@@ -157,7 +157,7 @@ nav ul li a {
 @media only screen and (max-width: 768px) {
   nav {
     flex-wrap: wrap;
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
   }
