@@ -1,3 +1,4 @@
+/* Reset CSS */
 *,
 html {
   padding: 0;
@@ -5,11 +6,26 @@ html {
   box-sizing: border-box;
 }
 
+/* Styling for body */
 body {
   background-color: #FFFFFF;
 }
 
+/* Styling for navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #12372A;
+  z-index: 1000; /* Membuat navbar berada di atas konten */
+  transition: top 0.3s; /* Animasi transisi saat navbar bergerak */
+}
+
+
+/* Styling for top navigation */
 .top-nav {
+  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,6 +36,7 @@ body {
   padding: 1em;
 }
 
+/* Styling for menu */
 .menu {
   display: flex;
   flex-direction: row;
@@ -33,6 +50,7 @@ body {
   overflow: hidden;
 }
 
+/* Styling for menu button container */
 .menu-button-container {
   display: none;
   height: 100%;
@@ -47,6 +65,7 @@ body {
   display: none;
 }
 
+/* Styling for menu button */
 .menu-button,
 .menu-button::before,
 .menu-button::after {
@@ -83,6 +102,7 @@ body {
   transform: rotate(-405deg);
 }
 
+/* Responsive styling for menu */
 @media (max-width: 768px) {
   .menu-button-container {
     display: flex;
@@ -124,6 +144,7 @@ body {
   }
 }
 
+/* Styling for navigation */
 nav {
   background-color: #12372A;
   display: flex;
@@ -151,8 +172,10 @@ nav ul li a {
   transition: all;
   transition-duration: 300ms;
   border-bottom: 1px solid rgba(255, 68, 0, 0);
+  height: 100%;
 }
 
+/* Responsive styling for navigation */
 @media screen and (max-width: 768px) {
   nav ul {
     display: none;
@@ -177,6 +200,7 @@ nav ul li a {
   }
 }
 
+/* Styling for logo */
 .logo span {
   font-family: 'Arial Narrow Bold', sans-serif;
   letter-spacing: 3px;
@@ -184,11 +208,14 @@ nav ul li a {
   font-size: 30px;
 }
 
+/* Styling for header */
 header {
   top: 0;
   width: 100%;
+  background: linear-gradient(to right, #f46b45, #eea849); /* Gradasi warna */
 }
 
+/* Styling for column */
 .kolom {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -201,6 +228,7 @@ header {
   color: #436850;
 }
 
+/* Styling for home section */
 #Home {
   display: flex;
   flex-direction: column;
@@ -208,8 +236,9 @@ header {
   text-align: center;
 }
 
+/* Styling for footer */
 footer {
-  background-color: #12372A;
+  background-color: rgba(18, 55, 42, 0.8); /* Warna dengan transparansi */
   color: #FFFFFF;
   text-align: center;
   padding: 20px 0;
@@ -223,6 +252,7 @@ footer p {
   font-size: 14px;
 }
 
+/* Styling for headings */
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 800;
@@ -232,6 +262,7 @@ h2 {
   line-height: 50px;
 }
 
+/* Styling for blue link */
 a.biru {
   background: #436850;
   border-radius: 30px;
@@ -242,8 +273,9 @@ a.biru {
   font-weight: bold;
 }
 
+/* Styling for images */
 .image {
-  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: 50%;
   margin-bottom: 10px;
@@ -252,6 +284,7 @@ a.biru {
   justify-content: center;
 }
 
+/* Styling for containers */
 .container {
   display: flex;
   flex-direction: column;
@@ -268,11 +301,13 @@ a.biru {
   }
 }
 
+/* Styling for main section */
 main {
   display: flex;
   flex-direction: row;
 }
 
+/* Styling for boxes */
 .box {
   margin: 5px;
   padding: 10px;
@@ -283,6 +318,7 @@ main {
   text-align: center;
 }
 
+/* Flex styling */
 .flexone {
   flex-grow: 1;
 }
@@ -291,10 +327,7 @@ main {
   flex-grow: 2;
 }
 
-footer {
-  text-align: center;
-}
-
+/* Styling for headings */
 h1 {
   text-align: center;
   color: #12372A;
@@ -315,6 +348,7 @@ h3 {
   align-items: center;
 }
 
+/* Styling for paragraphs */
 p {
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
@@ -322,6 +356,7 @@ p {
   padding: 10px 0px;
 }
 
+/* Styling for block quotes */
 q {
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
@@ -330,6 +365,7 @@ q {
   text-align: center;
 }
 
+/* Styling for section headings */
 h6 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
@@ -337,6 +373,7 @@ h6 {
   text-align: center;
 }
 
+/* Styling for logo heading */
 h4 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 37px;
@@ -344,6 +381,7 @@ h4 {
   text-align: center;
 }
 
+/* Styling for tables */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -356,6 +394,7 @@ td {
   padding: 8px;
 }
 
+/* Styling for sections */
 section {
   border: 2px solid #ADBC9F;
   margin: auto;
@@ -363,12 +402,15 @@ section {
   margin-bottom: 50px;
   padding: 20px;
   box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek shadow */
 }
 
+/* Styling for social media section */
 section#sosmed > iframe {
   border: none;
 }
 
+/* Animation for welcome text */
 @keyframes moveText {
   0% {
     transform: translateX(100%);
@@ -378,10 +420,12 @@ section#sosmed > iframe {
   }
 }
 
+/* Styling for header */
 header {
   position: relative;
 }
 
+/* Styling for welcome text */
 .welcome-text {
   position: relative;
   bottom: 0;
@@ -400,4 +444,36 @@ header {
     font-size: 14px;
     padding: 3px 0;
   }
+}
+
+/* Efek hover pada menu */
+nav ul li a:hover {
+  color: #FFA500; /* Ubah warna saat dihover */
+}
+
+/* Animasi untuk logo */
+.logo h4 {
+  animation: bounceLogo 2s infinite; /* Animasi */
+}
+
+@keyframes bounceLogo {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Ganti warna latar belakang header */
+header {
+  background: linear-gradient(to right, #f46b45, #eea849); /* Gradasi warna */
+}
+
+/* Warna hover untuk link */
+a:hover {
+  color: #FFA500; /* Warna saat dihover */
 }

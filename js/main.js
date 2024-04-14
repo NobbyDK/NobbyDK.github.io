@@ -11,3 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Ambil elemen navbar
+var navbar = document.querySelector("nav");
+
+// Atur event saat halaman di-scroll
+window.addEventListener("scroll", function() {
+  // Jika posisi scroll > 50, maka atur top navbar menjadi 0
+  if (window.scrollY > 50) {
+    navbar.style.top = "0";
+  } else {
+    // Jika tidak, atur top navbar menjadi -50px (di luar layar)
+    navbar.style.top = "-50px";
+  }
+});

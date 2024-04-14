@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+            }
+    
+            h1 {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+    
+            table {
+                width: 80%;
+                margin: 0 auto;
+                border-collapse: collapse;
+                border: 1px solid #ddd;
+                background-color: #fff;
+            }
+    
+            th, td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+    
+            th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+    
+            tr:hover {
+                background-color: #f5f5f5;
+            }
+    
+            #data_json {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        </style>
+
+        <title>Membaca File Json</title>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+            $(function(){
+
+                // <!-- Mengambil data dari file data.txt dengan fungsi $.get()  JQuery-->
+                $.get('data.json', function(obj) {
+                    // <!-- Tag Tabel Awal -->
+                    var str="<table border=1>";
+
+                    // <!-- Judul Tabel -->
+                    str+="<tr><td>No</td><td>Judul Berita</td><td>Kategori</td><td>Waktu Publish</td><td>Waktu Scraping</td></tr>";
+
+                    // <!-- Looping data headline dengan fungsi $.each() JQuery -->
+                    $.each(obj, function(n,data){
+                        // <!-- Isitabel -->
+                        str+="<tr><td>"+(n+1)+"</td>";
+                        str+="<td>"+data['Judul Berita    :']+"</td>";
+                        str+="<td>"+data['Kategori        :']+"</td>";
+                        str+="<td>"+data['Waktu Publish   :']+"</td>";
+                        str+="<td>"+data['Waktu Scraping:']+"</td>";
+                    });
+                    // <!-- Tag tabel penutup -->
+                    str+="</table>";
+                    // <!-- Display semua headline ke html dengan id=media -->
+                    $('#data_json').html(str);
+                });
+            });
+            
+        </script>
+       
+    </head>
+
+    <body>
+        <!-- Menampilkan Judul -->
+        <h1> Data Scrapping Website Republika.co.id </h1>
+        <!-- Menampilkan Headline -->
+        <div id="data_json"></div>
+    </body>
+</html>
+
