@@ -180,6 +180,7 @@ nav ul li a {
 @media screen and (max-width: 768px) {
   nav ul {
     display: none;
+  }
 @media only screen and (max-width: 768px) {
   nav {
     flex-wrap: wrap;
@@ -205,6 +206,7 @@ nav ul li a {
     display: flex;
     align-items: center;
   }
+}
 }
 
 /* Styling for logo */

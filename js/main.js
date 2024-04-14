@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-<<<<<<< HEAD
 // Ambil elemen navbar
 var navbar = document.querySelector("nav");
 
@@ -25,7 +24,6 @@ window.addEventListener("scroll", function() {
     navbar.style.top = "-50px";
   }
 });
-=======
 // Ambil elemen teks welcome
 var welcomeText = document.querySelector('.welcome-text');
 
@@ -40,4 +38,3 @@ function toggleWelcomeText() {
 
 // Tambahkan event listener untuk mengaktifkan fungsi ketika halaman digulir
 window.addEventListener('scroll', toggleWelcomeText);
->>>>>>> 129cb8404b781ae7fb49c4f297b1dc6db4e2ad84
