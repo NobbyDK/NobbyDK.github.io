@@ -176,17 +176,14 @@ nav ul li a {
   height: 100%;
 }
 
-<<<<<<< HEAD
 /* Responsive styling for navigation */
 @media screen and (max-width: 768px) {
   nav ul {
     display: none;
-=======
 @media only screen and (max-width: 768px) {
   nav {
     flex-wrap: wrap;
     position: absolute;
->>>>>>> 129cb8404b781ae7fb49c4f297b1dc6db4e2ad84
     width: 100%;
     top: 0;
   }
@@ -350,9 +347,7 @@ a.biru {
   max-width: 100%;
 }
 
-<<<<<<< HEAD
 /* Styling for containers */
-=======
 .gambar {
   max-width: 100%; /* Menjamin gambar tidak melebihi 50% lebar section */
   box-sizing: border-box;
@@ -380,7 +375,6 @@ th, td {
 }
 
 
->>>>>>> 129cb8404b781ae7fb49c4f297b1dc6db4e2ad84
 .container {
   display: flex;
   flex-direction: column;
@@ -472,11 +466,8 @@ h6 {
   max-width: 100%;
 }
 
-<<<<<<< HEAD
 /* Styling for logo heading */
-=======
 
->>>>>>> 129cb8404b781ae7fb49c4f297b1dc6db4e2ad84
 h4 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 37px;
@@ -508,11 +499,9 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek shadow */
 }
 
-<<<<<<< HEAD
 /* Styling for social media section */
 section#sosmed > iframe {
   border: none;
-=======
 #kontak iframe {
   width: 100%;
   height: auto;
@@ -521,7 +510,6 @@ section#sosmed > iframe {
 #video iframe {
   width: 100%;
   height: auto;
->>>>>>> 129cb8404b781ae7fb49c4f297b1dc6db4e2ad84
 }
 
 /* Animation for welcome text */
@@ -561,7 +549,6 @@ header {
     font-size: 10px;
     padding: 10px;
   }
-<<<<<<< HEAD
 }
 
 /* Efek hover pada menu */
@@ -595,6 +582,4 @@ header {
 a:hover {
   color: #FFA500; /* Warna saat dihover */
 }
-=======
 }
->>>>>>> 129cb8404b781ae7fb49c4f297b1dc6db4e2ad84
