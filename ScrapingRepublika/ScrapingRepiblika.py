@@ -40,4 +40,4 @@ if __name__ == '__main__':
         time_wait = 1
         Cari_Berita()
         print(f"Waiting for {time_wait} minutes.....")
-        time.sleep(time_wait*20)
+        time.sleep(time_wait*60)
