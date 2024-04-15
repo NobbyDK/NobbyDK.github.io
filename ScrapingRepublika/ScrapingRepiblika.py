@@ -5,17 +5,25 @@ import datetime
 import json
 
 def waktuPublishh(waktu):
-    now = datetime.datetime.now()
-    waktu_publish = datetime.datetime.strptime(waktu, "%d %B %Y, %H:%M")
-    selisih = now - waktu_publish
-    if selisih.days > 0:
-        return f"{selisih.days} hari yang lalu"
-    elif selisih.seconds < 60:
-        return "Baru saja"
-    elif selisih.seconds < 3600:
-        return f"{selisih.seconds // 60} menit yang lalu"
+    if waktu == "Baru saja":
+        return waktu
+    elif 'menit' in waktu:
+        return waktu
+    elif 'jam' in waktu:
+        return waktu
     else:
-        return f"{selisih.seconds // 3600} jam yang lalu"
+        now = datetime.datetime.now()
+        waktu_publish = datetime.datetime.strptime(waktu, "%d %B %Y, %H:%M")
+        selisih = now - waktu_publish
+        if selisih.days > 0:
+            return f"{selisih.days} hari yang lalu"
+        elif selisih.seconds < 60:
+            return "Baru saja"
+        elif selisih.seconds < 3600:
+            return f"{selisih.seconds // 60} menit yang lalu"
+        else:
+            return f"{selisih.seconds // 3600} jam yang lalu"
+
 
 
 def Cari_Berita():
